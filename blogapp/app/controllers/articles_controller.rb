@@ -31,23 +31,26 @@ class ArticlesController < ApplicationController
 def create
   	#render plain: params[:article].inspect
   	@article = Article.new(article_params)
-
+  
+  respond_to do |format|
   	if @article.save
-  		redirect_to @article
-  	else
-  		render 'new'
-  	end
+      format.html { redirect_to @article, notice: 'successfully created.' }
+  	 else
+  		format.html {render 'new'}
+  	 end
+    end
   end
 
   def update
   	@article = Article.find(params[:id])
-
+  respond_to do |format|
   	if @article.update(article_params)
-  		redirect_to @article
+  		format.html { redirect_to @article, notice: 'successfully updated.' }
   	else
-  		render 'edit'
+  		format.html {render 'edit'}
   	end
   end
+end
 
   private
   def article_params
