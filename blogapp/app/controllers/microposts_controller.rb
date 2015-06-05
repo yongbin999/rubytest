@@ -24,11 +24,8 @@ class MicropostsController < ApplicationController
   # POST /microposts
   # POST /microposts.json
   def create
-    @userexist = User.exists?(micropost_params[:user_id])
-    puts "#{micropost_params[:user_id]} userid exists is: #{@userexist}"
-    
+  
     respond_to do |format|
-    if @userexist
       @micropost = Micropost.new(micropost_params)
   
       if (@micropost.save)
@@ -38,11 +35,7 @@ class MicropostsController < ApplicationController
         format.html { render :new}
         format.json { render json: @micropost.errors, status: :unprocessable_entity }
       end
-
-    else
-     format.html {redirect_to new_micropost_path, notice: 'id doesnt exist please create it first'}
-    end
-  end
+  	end
   end
 
   # PATCH/PUT /microposts/1
