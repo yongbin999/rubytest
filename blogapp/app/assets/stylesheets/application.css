@@ -18,5 +18,18 @@
 
 #header, #footer { background: black; color: white;}
 
-#content { background: silver; text_color: red;
-			border-radius: 10px 10px 10px 10px;}
+#content { background: silver; color: blue;
+			border-radius: 10px 10px 10px 10px;
+			padding: 10px;}
+
+/* unvisited link */
+a:link {color: orange;}
+
+/* visited link */
+a:visited {color: gray;}
+
+/* mouse over link */
+a:hover {color: green;}
+
+/* selected link */
+a:active {color: green;}
