@@ -23,7 +23,7 @@
 			padding: 10px;}
 
 /* unvisited link */
-a:link {color: silver;background-color:transparent;}
+a:link {color: teal;background-color:transparent;}
 
 /* visited link */
 a:visited {color: gray;background-color:transparent;}
