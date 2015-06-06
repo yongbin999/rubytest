@@ -1,18 +1,20 @@
-<h2>Hello, Rails!</h2>
-<p>
-<%= link_to 'My Blog app', controller: 'articles' %>
- - 
-<%= link_to 'New article', new_article_path %>
-</p>
-<hr>
-<p>
-<%= link_to 'Users list', controller: 'users' %>
-
-<br><br>
-<%= link_to 'Posts by user', controller: 'microposts' %>
-</p>
+<h2>Ruby on Rails Scaffold Demos:</h2>
 <hr>
 
-<%= link_to '3rd app admin ppl', controller: 'people/admins' %>
-<br>
-<%= link_to '3rd app admin ppl', controller: 'people/students' %>
+<p>1st app: simple blog posts
+<br><%= link_to 'My Blog app', controller: 'articles' %>
+</p>
+
+<hr>
+<p>2nd app: blog post with validation by users
+<br><%= link_to 'Users list', controller: 'users' %>
+<br><%= link_to 'Posts by user', controller: 'microposts' %>
+</p>
+
+<hr>
+<p>3nd app: teacher and student grade sheet
+<br><%= link_to '3rd app admin ppl', controller: 'people/admins' %>
+<br><%= link_to '3rd app students', controller: 'people/students' %>
+</p>
+
+<hr>
