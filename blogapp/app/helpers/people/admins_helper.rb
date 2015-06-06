@@ -1,0 +1,2 @@
+module People::AdminsHelper
+end

@@ -1,4 +1,13 @@
 Rails.application.routes.draw do
+  namespace :people do
+    resources :admins
+  end
+  namespace :people do
+    resources :students
+  end
+  namespace :people do
+    resources :admins
+  end
   resources :microposts
   resources :users
   get 'welcome/index'
