@@ -1,21 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Blogapp</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
+	<title>Blogapp</title>
+	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+	<%= csrf_meta_tags %>
 </head>
 <body>
+	<div id="header">
+		<h2>Ruby on Rails Scaffold Demos:</h2>
+	</div>
 
-"header/ banner in layout/application"
+	<div id="content">
+		<%= yield %>
+	</div>
 
-
-<%= yield %>
-
-<p>"footer"
-<br> <%= link_to 'Homepage', '/' %>
-</p>
+	<div id="footer">
+		<p>"footer"
+			<br> <%= link_to 'Homepage', '/' %>
+		</p>
+	</div>
 
 </body>
 </html>
