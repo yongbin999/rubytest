@@ -23,13 +23,13 @@
 			padding: 10px;}
 
 /* unvisited link */
-a:link {color: orange;}
+a:link {color: silver;background-color:transparent;}
 
 /* visited link */
-a:visited {color: gray;}
+a:visited {color: gray;background-color:transparent;}
 
 /* mouse over link */
-a:hover {color: green;}
+a:hover {color: green;background-color:transparent;}
 
 /* selected link */
-a:active {color: green;}
+a:active {color: green;background-color:transparent;}
