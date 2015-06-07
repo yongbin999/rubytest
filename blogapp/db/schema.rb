@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150606031341) do
+ActiveRecord::Schema.define(version: 20150607000026) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,6 +40,16 @@ ActiveRecord::Schema.define(version: 20150606031341) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "people_admin_profiles", force: :cascade do |t|
+    t.string   "account"
+    t.text     "body"
+    t.integer  "people_admin_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  add_index "people_admin_profiles", ["people_admin_id"], name: "index_people_admin_profiles_on_people_admin_id", using: :btree
+
   create_table "people_admins", force: :cascade do |t|
     t.string   "name"
     t.string   "school"
@@ -64,4 +74,5 @@ ActiveRecord::Schema.define(version: 20150606031341) do
   end
 
   add_foreign_key "comments", "articles"
+  add_foreign_key "people_admin_profiles", "people_admins"
 end

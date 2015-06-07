@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Account:</strong>
+  <%= @people_admin_profile.account %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @people_admin_profile.body %>
+</p>
+
+<p>
+  <strong>People/admin:</strong>
+  <%= @people_admin_profile.people/admin %>
+</p>
+
+<%= link_to 'Edit', edit_people_admin_admin_profile_path(@people_admin_profile) %> |
+<%= link_to 'Back', people_admin_admin_profiles_path %>

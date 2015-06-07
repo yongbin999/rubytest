@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing People Admin Profiles</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Account</th>
+      <th>Body</th>
+      <th>People/admin</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @people_admin_profile.each do |people_admin_profile| %>
+      <tr>
+        <td><%= people_admin_profile.account %></td>
+        <td><%= people_admin_profile.body %></td>
+        <td><%= people_admin_profile.people/admin %></td>
+        <td><%= link_to 'Show', people_admin_profile %></td>
+        <td><%= link_to 'Edit', edit_people_admin_profile_path(people_admin_profile) %></td>
+        <td><%= link_to 'Destroy', people_admin_profile, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Admin profile', 'admin_profiles/new', controller: 'people/admin_profile'%>

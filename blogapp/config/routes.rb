@@ -1,16 +1,16 @@
 Rails.application.routes.draw do
   namespace :people do
-    resources :admins
+    resources :admins do
+    resources :admin_profiles
+    end
   end
+
   namespace :people do
     resources :students
   end
-  namespace :people do
-    resources :admins
-  end
+
   resources :microposts
   resources :users
-  get 'welcome/index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
