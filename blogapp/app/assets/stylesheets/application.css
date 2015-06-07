@@ -16,7 +16,7 @@
  html, body{ background: black; 
  			background-image: url('back.jpg');}
 
-#header, #footer { background: black; color: white;}
+#header, #footer { background: black; color: white; text-align: center;}
 
 #content { background: silver; color: blue;
 			border-radius: 10px 10px 10px 10px;

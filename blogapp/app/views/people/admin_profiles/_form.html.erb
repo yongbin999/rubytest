@@ -1,15 +1,5 @@
 <%= form_for(@people_admin_profile) do |f| %>
-  <% if @people_admin_profile.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@people_admin_profile.errors.count, "error") %> prohibited this people_admin_profile from being saved:</h2>
 
-      <ul>
-      <% @people_admin_profile.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
 
   <div class="field">
     <%= f.label :account %><br>

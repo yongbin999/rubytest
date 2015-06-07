@@ -14,7 +14,8 @@ class People::AdminProfilesController < ApplicationController
 
   # GET /people/admin_profiles/new
   def new
-    @people_admin_profiles = People::AdminProfile.new
+    #@people_admin= People::Admin.find(params[:admin_id])
+    @people_admin_profile = People::AdminProfile.new
   end
 
   # GET /people/admin_profiles/1/edit
@@ -24,15 +25,15 @@ class People::AdminProfilesController < ApplicationController
   # POST /people/admin_profiles
   # POST /people/admin_profiles.json
   def create
-    @people_admin_profiles = People::AdminProfile.new(people_admin_profiles_params)
+    @people_admin_profile = People::AdminProfile.new(people_admin_profile_params)
 
     respond_to do |format|
-      if @people_admin_profiles.save
-        format.html { redirect_to @people_admin_profiles, notice: 'Admin profile was successfully created.' }
-        format.json { render :show, status: :created, location: @people_admin_profiles }
+      if @people_admin_profile.save
+        format.html { redirect_to @people_admin_profile, notice: 'Admin profile was successfully created.' }
+        format.json { render :show, status: :created, location: @people_admin_profile }
       else
         format.html { render :new }
-        format.json { render json: @people_admin_profiles.errors, status: :unprocessable_entity }
+        format.json { render json: @people_admin_profile.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -41,12 +42,12 @@ class People::AdminProfilesController < ApplicationController
   # PATCH/PUT /people/admin_profiles/1.json
   def update
     respond_to do |format|
-      if @people_admin_profiles.update(people_admin_profiles_params)
-        format.html { redirect_to @people_admin_profiles, notice: 'Admin profile was successfully updated.' }
-        format.json { render :show, status: :ok, location: @people_admin_profiles }
+      if @people_admin_profile.update(people_admin_profiles_params)
+        format.html { redirect_to @people_admin_profile, notice: 'Admin profile was successfully updated.' }
+        format.json { render :show, status: :ok, location: @people_admin_profile }
       else
         format.html { render :edit }
-        format.json { render json: @people_admin_profiles.errors, status: :unprocessable_entity }
+        format.json { render json: @people_admin_profile.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -54,7 +55,7 @@ class People::AdminProfilesController < ApplicationController
   # DELETE /people/admin_profiles/1
   # DELETE /people/admin_profiles/1.json
   def destroy
-    @people_admin_profiles.destroy
+    @people_admin_profile.destroy
     respond_to do |format|
       format.html { redirect_to people_admin_profiles_url, notice: 'Admin profile was successfully destroyed.' }
       format.json { head :no_content }
@@ -63,12 +64,12 @@ class People::AdminProfilesController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_people_admin_profiles
-      @people_admin_profiles = People::AdminProfile.find(params[:id])
+    def set_people_admin_profile
+      @people_admin_profile = People::AdminProfile.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
-    def people_admin_profiles_params
-      params.require(:people_admin_profiles).permit(:account, :body, :people/admin_id)
+    def people_admin_profile_params
+      params.require(:people_admin_profile).permit(:account, :body, :people/admin_id)
     end
 end

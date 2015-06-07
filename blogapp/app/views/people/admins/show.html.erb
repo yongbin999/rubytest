@@ -3,18 +3,18 @@
 <p>
   <strong>Name:</strong>
   <%= @people_admin.name %>
-</p>
-
-<p>
+<br>
   <strong>School:</strong>
   <%= @people_admin.school %>
-</p>
-
-<p>
+<br>
   <strong>Department:</strong>
   <%= @people_admin.department %>
+<br>
+<%= link_to 'admin profile list', "#{@people_admin.id}/admin_profiles" %>
 </p>
 
+
+<br>
 
 <%= link_to 'Edit', edit_people_admin_path(@people_admin) %> |
 <%= link_to 'Back', people_admins_path %>
