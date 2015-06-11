@@ -3,14 +3,15 @@ Rails.application.routes.draw do
 
   get 'static_pages/help'
 
-  get 'ohoh', to: "articles#index"
+  get 'ohoh', to: "microposts#index"
 
   match "hi/bye" => "articles#index", via: [:get, :post]
   match "hi/bye/:id" => "articles#show", via: [:get, :post]
+  match "articles/:id" => "articles#show", via: [:get, :post]
   # need action match "hi/hi" => "articles", via: [:get, :post]
   # wrong need namespace match "hi/hi1" => "students#index", via: [:get, :post]
-  resources :testing, controller: "people/students"
-
+  resources :testing, controller: "people/students", 
+      constraints: { id: /[A-Z][A-Z][0-9]+/ }
 
   namespace :people do
     resources :admins do
