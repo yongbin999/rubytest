@@ -3,10 +3,13 @@ Rails.application.routes.draw do
 
   get 'static_pages/help'
 
+  get 'ohoh', to: "articles#index"
+
   match "hi/bye" => "articles#index", via: [:get, :post]
-  match "hi/hi" => "articles", via: [:get, :post]
-  match "hi/hi1" => "students#index", via: [:get, :post]
-  match "hi/hi2" => "people/students#index", via: [:get, :post]
+  match "hi/bye/:id" => "articles#show", via: [:get, :post]
+  # need action match "hi/hi" => "articles", via: [:get, :post]
+  # wrong need namespace match "hi/hi1" => "students#index", via: [:get, :post]
+  resources :testing, controller: "people/students"
 
 
   namespace :people do
