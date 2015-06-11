@@ -22,7 +22,7 @@ Rails.application.routes.draw do
   end
 
   resources :microposts
-  resources :users
+  resources :users, path_names: { new: 'make', edit: 'change' }
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
