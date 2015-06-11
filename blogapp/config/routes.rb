@@ -3,13 +3,17 @@ Rails.application.routes.draw do
 
   get 'static_pages/help'
 
+  match "hi/bye" => "articles#index", via: [:get, :post]
+  match "hi/hi" => "articles", via: [:get, :post]
+  match "hi/hi1" => "students#index", via: [:get, :post]
+  match "hi/hi2" => "people/students#index", via: [:get, :post]
+
+
   namespace :people do
     resources :admins do
     resources :admin_profiles
     end
-  end
-
-  namespace :people do
+  
     resources :students
   end
 
