@@ -29,6 +29,16 @@ Rails.application.routes.draw do
   resources :articles do
     resources :comments
   end
+  
+scope 'admin', as: 'admin' do
+  resources :users, :microposts
+end
+scope path_names: { new: 'make' } do
+  # rest of your routes
+end
+
+
+
   # You can have the root of your site routed with "root"
   root 'welcome#index'
 

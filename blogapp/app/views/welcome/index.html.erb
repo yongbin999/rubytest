@@ -7,6 +7,10 @@
 <p>2nd app: blog post with validation by users
 <br><%= link_to 'Users list', controller: 'users' %>
 <br><%= link_to 'Posts by user', controller: 'microposts' %>
+
+<br> alternative scoping path:
+<%= link_to 'admin Users list', 'admin/users' %> 
+<%= link_to 'admin posts by user', 'admin/microposts' %>
 </p>
 
 <hr>
