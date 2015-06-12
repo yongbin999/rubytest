@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   get 'static_pages/help'
 
   get 'ohoh', to: "microposts#index"
-  get 'signup',  to: 'users#new'
+  post 'signup',  to: 'users#new'
+  get 'signup',  to: 'users#index'
+
 
   match "hi/bye" => "articles#index", via: [:get, :post]
   match "hi/bye/:id" => "articles#show", via: [:get, :post]

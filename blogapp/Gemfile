@@ -3,7 +3,8 @@ source 'https://rubygems.org'
 ruby "2.2.1"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
-
+#auth system
+gem 'bcrypt',               '3.1.7'
 gem 'pg'
 # db intergration
 gem 'yaml_db', github: 'jetthoughts/yaml_db'
