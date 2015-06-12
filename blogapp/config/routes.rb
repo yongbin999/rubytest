@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get 'static_pages/help'
 
   get 'ohoh', to: "microposts#index"
+  get 'signup',  to: 'users#new'
 
   match "hi/bye" => "articles#index", via: [:get, :post]
   match "hi/bye/:id" => "articles#show", via: [:get, :post]
@@ -29,7 +30,7 @@ Rails.application.routes.draw do
   resources :articles do
     resources :comments
   end
-  
+
 scope 'admin', as: 'admin' do
   resources :users, :microposts
 end
