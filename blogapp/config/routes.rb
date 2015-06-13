@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   get 'ohoh', to: "microposts#index"
   get 'signup',  to: 'users#new'
-  get 'signup',  to: 'users#new'
+  get 'login',  to: 'users#new'
 
 
   match "hi/bye" => "articles#index", via: [:get, :post]

@@ -10,9 +10,9 @@
 	<div id="header">
 		<h2>Ruby on Rails Scaffold Demos</h2>
 		<nav>
-		<%= link_to 'Homepage', '/' %>
-		<%= link_to 'Signup', 'signup' %> 
-		<%= link_to 'Login', 'login' %> 
+		<%= link_to 'Homepage', root_url %>
+		<%= link_to 'Signup', root_url + 'signup' %> 
+		<%= link_to 'Login', root_url + 'login' %> 
 		</nav>
 	</div>
 
@@ -22,7 +22,7 @@
 
 	<div id="footer">
 		<p>
-			<%= link_to 'Homepage', '/' %>
+			<%= link_to 'Homepage', root_url %>
 			<%= link_to 'My other projects', 
 				"https://yongbin999.wordpress.com/" %>
 		</p>
